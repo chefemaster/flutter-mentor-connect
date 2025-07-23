@@ -8,7 +8,7 @@ import { componentTagger } from "lovable-tagger";
 const repoName = "flutter-mentor-connect";
 
 export default defineConfig(({ mode }) => ({
-  base: `/flutter-mentor-connect`,
+  base: `/`,
   server: {
     host: "::",
     port: 8080,
