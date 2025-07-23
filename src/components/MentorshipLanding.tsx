@@ -7,6 +7,11 @@ import heroImage from "@/assets/hero-mentorship.jpg";
 import featuresImage from "@/assets/flutter-features.jpg";
 
 const MentorshipLanding = () => {
+  // Função utilitária para abrir o WhatsApp com mensagem
+  const openWhatsApp = (message: string) => {
+    const url = `https://wa.me/5564993478762?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  };
   return (
     <div className="min-h-screen">
       {/* Alert Bar */}
@@ -26,7 +31,12 @@ const MentorshipLanding = () => {
             </div>
             <span className="font-bold text-xl">Mentoria Flutter</span>
           </div>
-          <Button variant="outline">Contato</Button>
+          <Button
+            variant="outline"
+            onClick={() => openWhatsApp('Olá, estou interessado na mentoria do Paulo Mendes.')}
+          >
+            Contato
+          </Button>
         </div>
       </header>
 
@@ -48,12 +58,22 @@ const MentorshipLanding = () => {
                   Domine Gerenciamento de Estado e Arquitetura de Software no Flutter com acompanhamento personalizado e aulas ao vivo.
                 </p>
               </div>
-              
+
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" variant="hero" className="text-lg px-8 py-4">
+                <Button
+                  size="lg"
+                  variant="hero"
+                  className="text-lg px-8 py-4"
+                  onClick={() => openWhatsApp('Olá, gostaria de fazer o pagamento da mentoria do Paulo Mendes')}
+                >
                   Garantir Minha Vaga - R$ 497
                 </Button>
-                <Button size="lg" variant="outline" className="text-lg px-8 py-4">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="text-lg px-8 py-4"
+                  onClick={() => openWhatsApp('Olá, estou interessado em saber mais sobre a Mentoria de Flutter do Paulo Mendes.')}
+                >
                   Saber Mais
                 </Button>
               </div>
@@ -75,9 +95,9 @@ const MentorshipLanding = () => {
             </div>
 
             <div className="relative">
-              <img 
-                src={heroImage} 
-                alt="Mentoria Flutter em ação" 
+              <img
+                src={heroImage}
+                alt="Mentoria Flutter em ação"
                 className="rounded-2xl shadow-2xl w-full"
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
@@ -206,9 +226,9 @@ const MentorshipLanding = () => {
             </div>
 
             <div className="relative">
-              <img 
-                src={featuresImage} 
-                alt="Flutter Development Features" 
+              <img
+                src={featuresImage}
+                alt="Flutter Development Features"
                 className="rounded-2xl shadow-xl w-full"
               />
             </div>
@@ -296,7 +316,7 @@ const MentorshipLanding = () => {
             <p className="text-xl mb-8 opacity-90">
               8 semanas de mentoria intensiva com suporte total e acesso vitalício ao conteúdo
             </p>
-            
+
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 max-w-md mx-auto">
               <div className="text-4xl font-bold mb-2">R$ 497</div>
               <p className="opacity-90">no PIX à vista</p>
@@ -304,7 +324,9 @@ const MentorshipLanding = () => {
             </div>
 
             <div className="space-y-4 mb-8">
-              <Button size="lg" variant="secondary" className="text-lg px-12 py-4 bg-white text-flutter-blue hover:bg-white/90">
+              <Button
+                onClick={() => openWhatsApp('Olá, gostaria de fazer o pagamento da mentoria do Paulo Mendes.')}
+                size="lg" variant="secondary" className="text-lg px-12 py-4 bg-white text-flutter-blue hover:bg-white/90">
                 Quero Garantir Minha Vaga Agora!
               </Button>
               <p className="text-sm opacity-75">✅ Reembolso garantido em 7 dias se não ficar satisfeito</p>
